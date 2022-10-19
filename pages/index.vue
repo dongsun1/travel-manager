@@ -11,6 +11,7 @@
     <b-form-input
       class="w-75 mb-2"
       v-model="login.password"
+      type="password"
       placeholder="비밀번호"
     ></b-form-input>
     <b-button class="w-75 mb-2" variant="outline-info" @click="onClickLogin">
@@ -20,42 +21,30 @@
     <Nuxt-link class="w-75 mb-2" to="/signup">
       <b-button class="w-100" variant="outline-info">회원가입</b-button>
     </Nuxt-link>
-    <b-alert
-      class="w-75 position-absolute"
-      style="bottom: 20%"
-      :show="dismissCountDown"
-      fade
-      variant="warning"
-      @dismissed="dismissCountDown = 0"
-      @dismiss-count-down="countDownChanged"
-    >
-      아이디, 비밀번호를 확인해주세요
-    </b-alert>
+    <Alert ref="alert" text="아이디, 비밀번호를 확인해주세요." />
   </section>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 
+import Alert from "~/components/alert.vue";
+
 export default Vue.extend({
+  components: { Alert },
   data() {
     return {
       login: {
         id: "",
         password: "",
       },
-      dismissSecs: 2,
-      dismissCountDown: 0,
     };
   },
   methods: {
-    countDownChanged(dismissCountDown: number) {
-      this.dismissCountDown = dismissCountDown;
-    },
     onClickLogin() {
       const { id, password } = this.login;
       if (id === "a" && password === "a") this.$router.push({ name: "main" });
-      else this.dismissCountDown = this.dismissSecs;
+      else (this.$refs.alert as any).dismissCountDown = 2;
     },
   },
 });
