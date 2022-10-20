@@ -3,7 +3,7 @@
     <top-bar />
     <div class="h-screen d-flex flex-column">
       <div class="bg-green-200 w-100 h-80">map</div>
-      <div class="accordion h-100 mt-1 mb-1" role="tablist">
+      <div class="accordion h-100 mt-1 mb-1 overflow-auto" role="tablist">
         <b-card no-body class="mb-1">
           <b-card-header header-tag="header" class="p-1" role="tab">
             <b-button block v-b-toggle.accordion-1 variant="info">
@@ -61,6 +61,32 @@
             </b-button>
           </b-card-header>
           <b-collapse id="accordion-4" accordion="my-accordion" role="tabpanel">
+            <b-card-body>
+              <b-card-text>123</b-card-text>
+            </b-card-body>
+          </b-collapse>
+        </b-card>
+
+        <b-card no-body class="mb-1">
+          <b-card-header header-tag="header" class="p-1" role="tab">
+            <b-button block v-b-toggle.accordion-5 variant="info">
+              다섯째 날
+            </b-button>
+          </b-card-header>
+          <b-collapse id="accordion-5" accordion="my-accordion" role="tabpanel">
+            <b-card-body>
+              <b-card-text>123</b-card-text>
+            </b-card-body>
+          </b-collapse>
+        </b-card>
+
+        <b-card no-body class="mb-1">
+          <b-card-header header-tag="header" class="p-1" role="tab">
+            <b-button block v-b-toggle.accordion-5 variant="info">
+              다섯째 날
+            </b-button>
+          </b-card-header>
+          <b-collapse id="accordion-5" accordion="my-accordion" role="tabpanel">
             <b-card-body>
               <b-card-text>123</b-card-text>
             </b-card-body>
