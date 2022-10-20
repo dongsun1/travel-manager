@@ -2,11 +2,14 @@
   <section>
     <top-bar />
     <div class="h-screen d-flex flex-column">
-      <div class="bg-green-200 w-100 h-80">map</div>
-      <div class="accordion h-100 mt-1 mb-1 overflow-auto" role="tablist">
+      <div class="bg-green-200 w-100 h-1/3">map</div>
+      <div
+        class="accordion h-2/3 mt-1 mb-1 overflow-auto border"
+        role="tablist"
+      >
         <b-card no-body class="mb-1">
           <b-card-header header-tag="header" class="p-1" role="tab">
-            <b-button block v-b-toggle.accordion-1 variant="info">
+            <b-button block v-b-toggle.accordion-1 variant="outline-info">
               첫째 날
             </b-button>
           </b-card-header>
@@ -30,7 +33,7 @@
 
         <b-card no-body class="mb-1">
           <b-card-header header-tag="header" class="p-1" role="tab">
-            <b-button block v-b-toggle.accordion-2 variant="info">
+            <b-button block v-b-toggle.accordion-2 variant="outline-info">
               둘째 날
             </b-button>
           </b-card-header>
@@ -43,7 +46,7 @@
 
         <b-card no-body class="mb-1">
           <b-card-header header-tag="header" class="p-1" role="tab">
-            <b-button block v-b-toggle.accordion-3 variant="info">
+            <b-button block v-b-toggle.accordion-3 variant="outline-info">
               셋째 날
             </b-button>
           </b-card-header>
@@ -56,7 +59,7 @@
 
         <b-card no-body class="mb-1">
           <b-card-header header-tag="header" class="p-1" role="tab">
-            <b-button block v-b-toggle.accordion-4 variant="info">
+            <b-button block v-b-toggle.accordion-4 variant="outline-info">
               넷째 날
             </b-button>
           </b-card-header>
@@ -69,7 +72,7 @@
 
         <b-card no-body class="mb-1">
           <b-card-header header-tag="header" class="p-1" role="tab">
-            <b-button block v-b-toggle.accordion-5 variant="info">
+            <b-button block v-b-toggle.accordion-5 variant="outline-info">
               다섯째 날
             </b-button>
           </b-card-header>
@@ -82,7 +85,7 @@
 
         <b-card no-body class="mb-1">
           <b-card-header header-tag="header" class="p-1" role="tab">
-            <b-button block v-b-toggle.accordion-5 variant="info">
+            <b-button block v-b-toggle.accordion-5 variant="outline-info">
               다섯째 날
             </b-button>
           </b-card-header>
@@ -95,7 +98,7 @@
 
         <b-card no-body class="mb-1">
           <b-card-header header-tag="header" class="p-1" role="tab">
-            <b-button block v-b-toggle.accordion-5 variant="info">
+            <b-button block v-b-toggle.accordion-5 variant="outline-info">
               다섯째 날
             </b-button>
           </b-card-header>
