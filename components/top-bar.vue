@@ -1,10 +1,11 @@
 <template>
-  <b-navbar toggleable="lg" type="light" variant="light">
+  <b-navbar
+    class="w-100 fixed-top"
+    toggleable="lg"
+    type="light"
+    variant="light"
+  >
     <b-navbar-brand>Trip Manager</b-navbar-brand>
-    <b-navbar-nav class="ml-auto d-flex flex-row align-items-center">
-      <b-avatar variant="info"></b-avatar>
-      <span>김동선</span>
-    </b-navbar-nav>
   </b-navbar>
 </template>
 
