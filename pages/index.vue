@@ -7,104 +7,37 @@
         class="accordion h-2/3 mt-1 mb-1 overflow-auto border"
         role="tablist"
       >
-        <b-card no-body class="mb-1">
+        <b-card
+          v-for="[index, { title, places }] in Object.entries(scheduleData)"
+          no-body
+          class="mb-1"
+        >
           <b-card-header header-tag="header" class="p-1" role="tab">
-            <b-button block v-b-toggle.accordion-1 variant="outline-info">
-              첫째 날
+            <b-button
+              block
+              v-b-toggle="`accordion-${index}`"
+              variant="outline-info"
+            >
+              {{ title }}
             </b-button>
           </b-card-header>
           <b-collapse
-            id="accordion-1"
+            :id="`accordion-${index}`"
             visible
             accordion="my-accordion"
             role="tabpanel"
           >
-            <b-card-body>
-              <b-card-text>
-                I start opened because
-                <code>visible</code>
-                is
-                <code>true</code>
+            <b-card-body class="d-flex flex-column justify-content-around p-1">
+              <b-card-text v-for="place in places">
+                <h4>{{ place }}</h4>
               </b-card-text>
-              <b-card-text>123</b-card-text>
-            </b-card-body>
-          </b-collapse>
-        </b-card>
-
-        <b-card no-body class="mb-1">
-          <b-card-header header-tag="header" class="p-1" role="tab">
-            <b-button block v-b-toggle.accordion-2 variant="outline-info">
-              둘째 날
-            </b-button>
-          </b-card-header>
-          <b-collapse id="accordion-2" accordion="my-accordion" role="tabpanel">
-            <b-card-body>
-              <b-card-text>123</b-card-text>
-            </b-card-body>
-          </b-collapse>
-        </b-card>
-
-        <b-card no-body class="mb-1">
-          <b-card-header header-tag="header" class="p-1" role="tab">
-            <b-button block v-b-toggle.accordion-3 variant="outline-info">
-              셋째 날
-            </b-button>
-          </b-card-header>
-          <b-collapse id="accordion-3" accordion="my-accordion" role="tabpanel">
-            <b-card-body>
-              <b-card-text>123</b-card-text>
-            </b-card-body>
-          </b-collapse>
-        </b-card>
-
-        <b-card no-body class="mb-1">
-          <b-card-header header-tag="header" class="p-1" role="tab">
-            <b-button block v-b-toggle.accordion-4 variant="outline-info">
-              넷째 날
-            </b-button>
-          </b-card-header>
-          <b-collapse id="accordion-4" accordion="my-accordion" role="tabpanel">
-            <b-card-body>
-              <b-card-text>123</b-card-text>
-            </b-card-body>
-          </b-collapse>
-        </b-card>
-
-        <b-card no-body class="mb-1">
-          <b-card-header header-tag="header" class="p-1" role="tab">
-            <b-button block v-b-toggle.accordion-5 variant="outline-info">
-              다섯째 날
-            </b-button>
-          </b-card-header>
-          <b-collapse id="accordion-5" accordion="my-accordion" role="tabpanel">
-            <b-card-body>
-              <b-card-text>123</b-card-text>
-            </b-card-body>
-          </b-collapse>
-        </b-card>
-
-        <b-card no-body class="mb-1">
-          <b-card-header header-tag="header" class="p-1" role="tab">
-            <b-button block v-b-toggle.accordion-5 variant="outline-info">
-              다섯째 날
-            </b-button>
-          </b-card-header>
-          <b-collapse id="accordion-5" accordion="my-accordion" role="tabpanel">
-            <b-card-body>
-              <b-card-text>123</b-card-text>
-            </b-card-body>
-          </b-collapse>
-        </b-card>
-
-        <b-card no-body class="mb-1">
-          <b-card-header header-tag="header" class="p-1" role="tab">
-            <b-button block v-b-toggle.accordion-5 variant="outline-info">
-              다섯째 날
-            </b-button>
-          </b-card-header>
-          <b-collapse id="accordion-5" accordion="my-accordion" role="tabpanel">
-            <b-card-body>
-              <b-card-text>123</b-card-text>
+              <b-button
+                class="w-100"
+                variant="outline-info"
+                @click="addPlace(index)"
+              >
+                장소 추가
+              </b-button>
             </b-card-body>
           </b-collapse>
         </b-card>
@@ -121,7 +54,37 @@
 import Vue from "vue";
 
 import TopBar from "~/components/top-bar.vue";
+
+import ScheduleData from "~/types/schedule";
+
 export default Vue.extend({
   components: { TopBar },
+  data() {
+    return {
+      scheduleData: {
+        "1": {
+          title: "첫째 날",
+          places: ["협재해수욕장"],
+        },
+        "2": {
+          title: "둘째 날",
+          places: ["협재해수욕장"],
+        },
+        "3": {
+          title: "셋째 날",
+          places: ["협재해수욕장"],
+        },
+        "4": {
+          title: "넷째 날",
+          places: ["협재해수욕장"],
+        },
+      } as ScheduleData,
+    };
+  },
+  methods: {
+    addPlace(index: string) {
+      this.scheduleData[index].places.push("협재해수욕장");
+    },
+  },
 });
 </script>
