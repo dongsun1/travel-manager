@@ -56,7 +56,6 @@ import Vue from "vue";
 import TopBar from "~/components/top-bar.vue";
 
 import ScheduleData from "~/types/schedule";
-
 export default Vue.extend({
   components: { TopBar },
   data() {
