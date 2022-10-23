@@ -77,6 +77,10 @@ export default Vue.extend({
           title: "넷째 날",
           places: ["협재해수욕장"],
         },
+        "5": {
+          title: "다섯째 날",
+          places: ["협재해수욕장"],
+        },
       } as ScheduleData,
     };
   },
