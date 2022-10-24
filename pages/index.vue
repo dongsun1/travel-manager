@@ -43,8 +43,16 @@
         </b-card>
       </div>
       <div class="w-100 d-flex justify-content-around mb-2">
-        <b-button class="w-48" variant="outline-info">날짜 변경</b-button>
-        <b-button class="w-48" variant="outline-info">일정 확정</b-button>
+        <b-button
+          class="w-48"
+          variant="outline-info"
+          @click="onClickDateChange"
+        >
+          날짜 변경
+        </b-button>
+        <b-button class="w-48" variant="outline-info" @click="onClickSubmit">
+          일정 확정
+        </b-button>
       </div>
     </div>
   </section>
@@ -88,6 +96,8 @@ export default Vue.extend({
     addPlace(index: string) {
       this.scheduleData[index].places.push("협재해수욕장");
     },
+    onClickDateChange() {},
+    onClickSubmit() {},
   },
 });
 </script>
