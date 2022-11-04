@@ -32,6 +32,7 @@ import Vue from "vue";
 export default Vue.extend({
   data() {
     return {
+      data: [{ id: "testId" }],
       signup: {
         id: "",
         password: "",
@@ -42,9 +43,8 @@ export default Vue.extend({
   },
   methods: {
     onClickLogin() {
-      const data = [{ id: "a" }];
       const { id: signupId, password, passwordCheck } = this.signup;
-      if (data.find(({ id }) => id === signupId)) {
+      if (this.data.find(({ id }) => id === signupId)) {
         this.text = "중복된 아이디 입니다.";
         (this.$refs.alert as any).dismissCountDown = 2;
       } else if (password !== passwordCheck) {
